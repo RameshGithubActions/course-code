@@ -7,3 +7,4 @@ jobs:
     steps:
       - name: Setting an error message
         run: echo "::error::Missing semicolon"
+        
