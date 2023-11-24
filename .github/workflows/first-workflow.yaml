@@ -12,4 +12,20 @@ jobs:
           python -V
           pip -V
 
+  parallel-job-macos:
+    runs-on: macos-latest
+    steps:
+      - name: View Sw Vesion
+        run: sw_version
+
+  dependent-job:
+    runs-on: windows-lates
+    needs: run-shell-commands
+    steps:
+      - name: echo a string
+        run: Write-Output "Windows String"
+      - name: Error Step
+        run: doesnotexists
+
+
 
